@@ -9,5 +9,9 @@ import '@angular/router';
 // RxJS
 import 'rxjs';
 
+// jQuery
+import * as $ from "jquery";
+(<any>global).jQuery = $;
+
 // Bootstrap
 import 'bootstrap';

@@ -6,7 +6,6 @@ export class Person {
 }
 
 @Component({
-	moduleId: module.id,
 	selector: 'person-form',
 	templateUrl: './person-form.component.html',
 	styleUrls: ['./person-form.component.css']
