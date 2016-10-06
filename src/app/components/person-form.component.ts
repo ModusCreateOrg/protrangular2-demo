@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 
 export class Person {
-	name: string;
-	favoriteColor: string;
+	constructor(
+		public name: string,
+		public favoriteColor: string
+	){}
 }
 
 @Component({
-	moduleId: module.id,
 	selector: 'person-form',
 	templateUrl: './person-form.component.html',
 	styleUrls: ['./person-form.component.css']
@@ -14,12 +15,25 @@ export class Person {
 
 export class PersonFormComponent {
 	
-	model = new Person;
+	model = new Person('Andrew', 'Blue');
+	active = true;
 
 	submitted = false;
+	get responseMessage() {
+	return "My name is " + this.model.name + " and my favorite color is " + this.model.favoriteColor;
+	}
+	
 	onSubmit() { this.submitted = true; }
 
 	get diagnostic() {
 		return JSON.stringify(this.model)
+	}
+
+
+	newPerson() {
+		this.model = new Person("Patrick", "Green");
+		this.active = false;
+		setTimeout(() => this.active = true, 0);
+		return this.model;
 	}
 }
