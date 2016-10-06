@@ -1,0 +1,13 @@
+<form>
+	<div class="form-group">
+		<label for="name">Name:</label><br>
+		<input value="" id="name" name="name" [(ngModel)]="model.name" required>
+	</div>
+
+	<div class="form-group">
+		<label for="favColor">Favorite Color:</label><br>
+		<input type="text" id="favColor" name="favColor" [(ngModel)]="model.favColor" required>
+	</div>
+
+	<button type="submit" class="btn btn-default">Submit</button>
+</form>  
