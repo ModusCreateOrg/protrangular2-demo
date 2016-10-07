@@ -15,7 +15,8 @@ export class Person {
 
 export class PersonFormComponent {
 	
-	model = new Person('Andrew', 'Blue');
+	model = new Person('','');
+	modelFilled = false;
 	active = true;
 
 	submitted = false;
@@ -32,6 +33,7 @@ export class PersonFormComponent {
 
 	newPerson() {
 		this.model = new Person("Patrick", "Green");
+		this.modelFilled = true;
 		this.active = false;
 		setTimeout(() => this.active = true, 0);
 		return this.model;
