@@ -13,8 +13,11 @@ describe('Angular 2 + Protractor Demo', function() {
 		browser.get('http://localhost:8080/');
 
 		element(by.id('name')).sendKeys(randName);
+		browser.sleep(3000);
 		element(by.id('favColor')).sendKeys(randColor);
+		browser.sleep(3000);
 		element(by.id('formButton')).click();
+		browser.sleep(3000);
 	});
 	// Checks to see that the HTML message returns the proper
 	// string with input values
