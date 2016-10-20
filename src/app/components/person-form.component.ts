@@ -18,21 +18,24 @@ export class PersonFormComponent {
 	model = new Person('','');
 	modelFilled = false;
 	active = true;
-
 	submitted = false;
+
 	get responseMessage() {
 	return "My name is " + this.model.name + " and my favorite color is " + this.model.favoriteColor;
 	}
 	
-	onSubmit() { this.submitted = true; }
+	onSubmit(form: any): void { 
+		 console.log('you submitted value:', form);
+		 this.newPerson(form.name, form.favColor);
+	}
 
 	get diagnostic() {
 		return JSON.stringify(this.model)
 	}
 
 
-	newPerson() {
-		this.model = new Person("Patrick", "Green");
+	newPerson(name:string, color:string) {
+		this.model = new Person(name, color);
 		this.modelFilled = true;
 		this.active = false;
 		setTimeout(() => this.active = true, 0);
