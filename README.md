@@ -6,7 +6,9 @@ Demo for NoVAJS talk on getting started with Protractor in Angular 2
 Clone the repo and from the project root type:
 ```
 npm install
+node_modules/protractor/bin/webdriver-manager update
 ```
+This will install all the necessary dependencies and update chromedriver.
 Afterwards, start the Angular2 dev server by typing:
 ```
 npm run start
